@@ -15,20 +15,20 @@ export default function ContactPage() {
       </section>
 
       <div className={styles.grid}>
-        <form className={styles.form}>
+        <div className={styles.form}>
           <div className={styles.field}>
             <label className={styles.label}>Votre nom</label>
             <input type="text" className={styles.input} placeholder="Gabriel VILLEMONTE" />
           </div>
           <div className={styles.field}>
             <label className={styles.label}>Email</label>
-            <input type="email" className={styles.input} placeholder=gabriel.villemonte04@gmail.com" />
+            <input type="email" className={styles.input} placeholder="gabriel.villemonte@epitech.eu " />
           </div>
           <div className={styles.field}>
             <label className={styles.label}>Sujet</label>
             <select className={styles.input}>
               <option>Une commande</option>
-              <option>Devenir artiste partenaire</option>
+              <option>Devenir artisan partenaire</option>
               <option>Presse / Médias</option>
               <option>Autre</option>
             </select>
@@ -37,10 +37,10 @@ export default function ContactPage() {
             <label className={styles.label}>Message</label>
             <textarea className={styles.textarea} rows={5} placeholder="Votre message..." />
           </div>
-          <button type="submit" className={styles.submitBtn}>
+          <button type="button" className={styles.submitBtn}>
             Envoyer →
           </button>
-        </form>
+        </div>
 
         <div className={styles.info}>
           <div className={styles.infoBlock}>
