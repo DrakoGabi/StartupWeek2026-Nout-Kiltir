@@ -1,0 +1,140 @@
+/* =============================================
+   VARIABLES GLOBALES — Nout' Kiltir
+   ============================================= */
+:root {
+    /* Couleurs — Charte Nout' Kiltir */
+    --color-bg: #FCF6E6; /* Crème chaud */
+    --color-text: #2a2118; /* Brun foncé */
+    --color-text-light: #6F6458; /* Taupe */
+    --color-accent: #ED3D2D; /* Rouge réunionnais */
+    --color-accent-blue: #3D65F6; /* Bleu drapeau */
+    --color-accent-yellow: #FFDE59; /* Jaune soleil */
+    --color-taupe: #6F6458;
+    --color-border: #e8dfc8;
+    --color-overlay-bg: #2a2118; /* Brun foncé menu */
+    --color-overlay-text: #FCF6E6;
+
+    /* Typographie */
+    --font-display: 'Squada One', sans-serif; /* Titres — esprit Cubao */
+    --font-script: 'Patrick Hand', cursive; /* Script — esprit Bimbo */
+    --font-ui: 'Squada One', sans-serif; /* Corps de texte */ /* Corps de texte */
+
+    /* Transitions */
+    --transition-page: 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+    --transition-fast: 0.3s ease;
+    --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =============================================
+   RESET
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =============================================
+   UTILITAIRES
+   ============================================= */
+.section-label {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--color-accent-blue);
+}
+
+.section-title-script {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--color-accent-blue);
+  line-height: 1.1;
+}
+
+/* =============================================
+   CURSEUR CUSTOM
+   ============================================= */
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  mix-blend-mode: multiply;
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--color-accent-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+.cursor.is-hover {
+  width: 24px;
+  height: 24px;
+  background: var(--color-accent-blue);
+}
+
+/* =============================================
+   PROGRESS BAR
+   ============================================= */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--color-accent);
+  z-index: 200;
+  width: 0%;
+  transition: width 0.1s linear;
+}

@@ -1,0 +1,137 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--color-overlay-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(0% at calc(100% - 6rem) 2rem);
+  transition: clip-path 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Motif décoratif hibiscus en fond */
+.overlay::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,222,89,0.08);
+  pointer-events: none;
+}
+.overlay::after {
+  content: '';
+  position: absolute;
+  bottom: -5%;
+  right: 0%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 1px solid rgba(237,61,45,0.1);
+  pointer-events: none;
+}
+
+.open {
+  clip-path: circle(150% at calc(100% - 6rem) 2rem);
+  pointer-events: all;
+}
+
+/* Bande colorée gauche */
+.colorBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.colorBar span:nth-child(1) { flex: 1; background: var(--color-accent); }
+.colorBar span:nth-child(2) { flex: 1; background: var(--color-accent-blue); }
+.colorBar span:nth-child(3) { flex: 1; background: var(--color-accent-yellow); }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 8rem;
+  gap: 0;
+  width: 100%;
+}
+
+.linkWrap {
+  overflow: hidden;
+  line-height: 1;
+}
+
+.link {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-overlay-text);
+  display: block;
+  line-height: 1.05;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease, color 0.3s ease, -webkit-text-stroke 0.3s ease;
+}
+
+.open .link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Couleurs alternées au hover */
+.link:hover { -webkit-text-stroke: 2px var(--color-accent); color: transparent; }
+.link:nth-child(2n):hover { -webkit-text-stroke: 2px var(--color-accent-blue); color: transparent; }
+.link:nth-child(3n):hover { -webkit-text-stroke: 2px var(--color-accent-yellow); color: transparent; }
+
+/* Numéros */
+.linkNum {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-taupe);
+  margin-right: 1.5rem;
+  vertical-align: middle;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 3rem;
+  left: 8rem;
+  right: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.75s;
+}
+.open .footer { opacity: 1; }
+
+.slogan {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: rgba(252, 246, 230, 0.35);
+}
+
+.socials { display: flex; gap: 2rem; }
+.social {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(252,246,230,0.35);
+  transition: color 0.3s ease;
+}
+.social:hover { color: var(--color-overlay-text); }

@@ -1,0 +1,110 @@
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s ease, padding 0.4s ease, border-bottom 0.4s ease;
+}
+
+.scrolled {
+  background: rgba(252, 246, 230, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 3rem;
+}
+
+/* Menu ouvert: texte crème */
+.menuOpen .logoText,
+.menuOpen .navCta,
+.menuOpen .menuBtn {
+  color: var(--color-overlay-text);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.logoNout {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  line-height: 0.9;
+  transition: color 0.3s ease;
+}
+
+.logoKiltir {
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  color: var(--color-accent-blue);
+  margin-top: -2px;
+  transition: color 0.3s ease;
+}
+
+.menuOpen .logoNout { color: var(--color-overlay-text); }
+.menuOpen .logoKiltir { color: var(--color-accent-yellow); }
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navCta {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.navCta:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: currentColor;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: color 0.3s ease;
+}
+.menuBtn:hover { color: var(--color-accent); }
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 22px;
+}
+.burger span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  transform-origin: center;
+  border-radius: 2px;
+}
+
+.menuOpen .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menuOpen .burger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menuOpen .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
