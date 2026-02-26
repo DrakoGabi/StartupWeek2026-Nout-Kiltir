@@ -1,3 +1,5 @@
+'use client'
+
 import ScrollReveal from '@/components/animations/ScrollReveal'
 import styles from './page.module.css'
 
@@ -18,11 +20,11 @@ export default function ContactPage() {
         <div className={styles.form}>
           <div className={styles.field}>
             <label className={styles.label}>Votre nom</label>
-            <input type="text" className={styles.input} placeholder="Gabriel VILLEMONTE" />
+            <input type="text" className={styles.input} placeholder="Marie Dupont" />
           </div>
           <div className={styles.field}>
             <label className={styles.label}>Email</label>
-            <input type="email" className={styles.input} placeholder="gabriel.villemonte@epitech.eu " />
+            <input type="email" className={styles.input} placeholder="marie@exemple.re" />
           </div>
           <div className={styles.field}>
             <label className={styles.label}>Sujet</label>
